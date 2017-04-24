@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">时空交换</string>
+    <string name="task_list">任务列表</string>
+    <string name="accepted">接受的任务</string>
+    <string name="issued">发出的任务</string>
+    <string name="profile">个人</string>
+</resources>
