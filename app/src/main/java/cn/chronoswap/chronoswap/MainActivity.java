@@ -1,12 +1,12 @@
 package cn.chronoswap.chronoswap;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.MenuItem;
 
 import butterknife.ButterKnife;
 
@@ -16,8 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private AcceptedFragment acceptedFragment;
     private IssuedFragment issuedFragment;
     private ProfileFragment profileFragment;
-    private ImageView[] bottomButton;
-    private TextView[] bottomText;
+    private BottomNavigationView navigationView;
 
     private int index;
     // 当前fragment的index
@@ -40,22 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         fragments = new Fragment[]{taskFragment, acceptedFragment, issuedFragment, profileFragment};
 
-        //图标
-        bottomButton = new ImageView[4];
-        bottomButton[0] = ButterKnife.findById(this, R.id.main_ib_task);
-        bottomButton[1] = ButterKnife.findById(this, R.id.main_ib_accepted);
-        bottomButton[2] = ButterKnife.findById(this, R.id.main_ib_issued);
-        bottomButton[3] = ButterKnife.findById(this, R.id.main_ib_profile);
-        bottomButton[0].setSelected(true);
-
-        //文字
-        bottomText = new TextView[4];
-        bottomText[0] = ButterKnife.findById(this, R.id.main_tv_task);
-        bottomText[1] = ButterKnife.findById(this, R.id.main_tv_accepted);
-        bottomText[2] = ButterKnife.findById(this, R.id.main_tv_issued);
-        bottomText[3] = ButterKnife.findById(this, R.id.main_tv_profile);
-        bottomText[0].setTextColor(getResources().getColor(R.color.selected));
-
         // 添加显示第一个fragment
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.fragment_container, taskFragment)
@@ -67,42 +50,41 @@ public class MainActivity extends AppCompatActivity {
                 .hide(profileFragment)
                 .show(taskFragment)
                 .commit();
-    }
 
-    //点击下边栏按钮的跳转
-    public void onTabClicked(View view) {
-        switch (view.getId()) {
-            case R.id.main_re_task_list:
-                index = 0;
-                break;
+        navigationView= ButterKnife.findById(this, R.id.navigation_view);
+        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.main_task:
+                        index = 0;
+                        break;
 
-            case R.id.main_re_accepted_list:
-                index = 1;
-                break;
+                    case R.id.main_accepted:
+                        index = 1;
+                        break;
 
-            case R.id.main_re_issued_list:
-                index = 2;
-                break;
+                    case R.id.main_issued:
+                        index = 2;
+                        break;
 
-            case R.id.main_re_profile:
-                index = 3;
-                break;
-        }
+                    case R.id.main_profile:
+                        index = 3;
+                        break;
+                }
 
-        if (currentTabIndex != index) {
-            FragmentTransaction trx = getSupportFragmentManager()
-                    .beginTransaction();
-            trx.hide(fragments[currentTabIndex]);
-            if (!fragments[index].isAdded()) {
-                trx.add(R.id.fragment_container, fragments[index]);
+                if (currentTabIndex != index) {
+                    FragmentTransaction trx = getSupportFragmentManager()
+                            .beginTransaction();
+                    trx.hide(fragments[currentTabIndex]);
+                    if (!fragments[index].isAdded()) {
+                        trx.add(R.id.fragment_container, fragments[index]);
+                    }
+                    trx.show(fragments[index]).commit();
+                }
+                currentTabIndex = index;
+                return true;
             }
-            trx.show(fragments[index]).commit();
-        }
-        bottomButton[currentTabIndex].setSelected(false);
-        // 把当前tab设为选中状态
-        bottomButton[index].setSelected(true);
-        bottomText[currentTabIndex].setTextColor(getResources().getColor(R.color.white));
-        bottomText[index].setTextColor(getResources().getColor(R.color.selected));
-        currentTabIndex = index;
+        });
     }
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><!--已发布任务图标在选中和未选中时的样式-->
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:drawable="@drawable/tab_issued_pressed" android:state_selected="true" />
-    <item android:drawable="@drawable/tab_issued_normal" />
-
-</selector>
