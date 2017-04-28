@@ -8,14 +8,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     private Fragment[] fragments;
     public TaskFragment taskFragment;
     private AcceptedFragment acceptedFragment;
     private IssuedFragment issuedFragment;
     private ProfileFragment profileFragment;
-    private ImageView[] imagebuttons;
-    private TextView[] textviews;
+    private ImageView[] bottomButton;
+    private TextView[] bottomText;
 
     private int index;
     // 当前fragment的index
@@ -39,20 +41,20 @@ public class MainActivity extends AppCompatActivity {
         fragments = new Fragment[]{taskFragment, acceptedFragment, issuedFragment, profileFragment};
 
         //图标
-        imagebuttons = new ImageView[4];
-        imagebuttons[0] = (ImageView) findViewById(R.id.main_ib_task);
-        imagebuttons[1] = (ImageView) findViewById(R.id.main_ib_accepted);
-        imagebuttons[2] = (ImageView) findViewById(R.id.main_ib_issued);
-        imagebuttons[3] = (ImageView) findViewById(R.id.main_ib_profile);
-        imagebuttons[0].setSelected(true);
+        bottomButton = new ImageView[4];
+        bottomButton[0] = ButterKnife.findById(this, R.id.main_ib_task);
+        bottomButton[1] = ButterKnife.findById(this, R.id.main_ib_accepted);
+        bottomButton[2] = ButterKnife.findById(this, R.id.main_ib_issued);
+        bottomButton[3] = ButterKnife.findById(this, R.id.main_ib_profile);
+        bottomButton[0].setSelected(true);
 
         //文字
-        textviews = new TextView[4];
-        textviews[0] = (TextView) findViewById(R.id.main_tv_task);
-        textviews[1] = (TextView) findViewById(R.id.main_tv_accepted);
-        textviews[2] = (TextView) findViewById(R.id.main_tv_issued);
-        textviews[3] = (TextView) findViewById(R.id.main_tv_profile);
-        textviews[0].setTextColor(0xFF45C01A);
+        bottomText = new TextView[4];
+        bottomText[0] = ButterKnife.findById(this, R.id.main_tv_task);
+        bottomText[1] = ButterKnife.findById(this, R.id.main_tv_accepted);
+        bottomText[2] = ButterKnife.findById(this, R.id.main_tv_issued);
+        bottomText[3] = ButterKnife.findById(this, R.id.main_tv_profile);
+        bottomText[0].setTextColor(getResources().getColor(R.color.selected));
 
         // 添加显示第一个fragment
         getSupportFragmentManager().beginTransaction()
@@ -96,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
             }
             trx.show(fragments[index]).commit();
         }
-        imagebuttons[currentTabIndex].setSelected(false);
+        bottomButton[currentTabIndex].setSelected(false);
         // 把当前tab设为选中状态
-        imagebuttons[index].setSelected(true);
-        textviews[currentTabIndex].setTextColor(0xFF999999);
-        textviews[index].setTextColor(0xFF45C01A);
+        bottomButton[index].setSelected(true);
+        bottomText[currentTabIndex].setTextColor(getResources().getColor(R.color.white));
+        bottomText[index].setTextColor(getResources().getColor(R.color.selected));
         currentTabIndex = index;
     }
 }

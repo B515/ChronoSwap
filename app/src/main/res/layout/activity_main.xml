@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:layout_alignParentBottom="true"
-        android:background="#ffffff"
+        android:background="?attr/colorPrimaryDark"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -47,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:layout_centerHorizontal="true"
-                android:background="#ffffff"
+                android:background="?attr/colorPrimaryDark"
                 android:focusable="false"
                 android:scaleType="centerInside"
                 android:src="@drawable/tab_task" />
@@ -60,7 +60,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
                 android:text="@string/task_list"
-                android:textColor="#9A9A9A"
+                android:textColor="@android:color/white"
                 android:textSize="12sp" />
         </RelativeLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:layout_centerHorizontal="true"
-                android:background="#ffffff"
+                android:background="?attr/colorPrimaryDark"
                 android:focusable="false"
                 android:scaleType="centerInside"
                 android:src="@drawable/tab_accepted" />
@@ -89,7 +89,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
                 android:text="@string/accepted"
-                android:textColor="#9A9A9A"
+                android:textColor="@android:color/white"
                 android:textSize="12sp" />
 
 
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:layout_centerHorizontal="true"
-                android:background="#ffffff"
+                android:background="?attr/colorPrimaryDark"
                 android:focusable="false"
                 android:scaleType="centerInside"
                 android:src="@drawable/tab_issued" />
@@ -121,7 +121,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
                 android:text="@string/issued"
-                android:textColor="#9A9A9A"
+                android:textColor="@android:color/white"
                 android:textSize="12sp" />
         </RelativeLayout>
 
@@ -137,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="28dp"
                 android:layout_centerHorizontal="true"
-                android:background="#ffffff"
+                android:background="?attr/colorPrimaryDark"
                 android:focusable="false"
                 android:scaleType="centerInside"
                 android:src="@drawable/tab_profile" />
@@ -150,7 +150,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="3dp"
                 android:text="@string/profile"
-                android:textColor="#9A9A9A"
+                android:textColor="@android:color/white"
                 android:textSize="12sp" />
         </RelativeLayout>
     </LinearLayout>
