@@ -4,4 +4,8 @@
     <string name="accepted">接受的任务</string>
     <string name="issued">发出的任务</string>
     <string name="profile">个人</string>
+    <string name="task_history">任务历史</string>
+    <string name="setting">设置</string>
+    <string name="log_in">登录</string>
+    <string name="log_out">退出登录</string>
 </resources>
