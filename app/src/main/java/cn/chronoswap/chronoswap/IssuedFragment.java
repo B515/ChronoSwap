@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 
 public class IssuedFragment extends Fragment {
 
-    private LayoutInflater infalter;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
