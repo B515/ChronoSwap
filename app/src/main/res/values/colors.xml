@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFF</color>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#458bff</color>
+    <color name="colorPrimaryDark">#2a76f6</color>
+    <color name="selected">#ffeb45</color>
     <color name="colorAccent">#FF4081</color>
     <color name="log_in">#09F626</color>
     <color name="log_out">#F50300</color>
