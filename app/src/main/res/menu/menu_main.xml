@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/main_task"
+        android:icon="@drawable/ic_task"
+        android:title="@string/task_list"/>
+
+    <item
+        android:id="@+id/main_accepted"
+        android:icon="@drawable/ic_accepted"
+        android:title="@string/accepted"/>
+
+    <item
+        android:id="@+id/main_issued"
+        android:icon="@drawable/ic_issued"
+        android:title="@string/issued"/>
+
+    <item
+        android:id="@+id/main_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile"/>
+
+</menu>
