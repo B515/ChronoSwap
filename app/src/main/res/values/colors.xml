@@ -7,4 +7,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="log_in">#09F626</color>
     <color name="log_out">#F50300</color>
+    <color name="error">#F51000</color>
+    <color name="right">#09F626</color>
 </resources>

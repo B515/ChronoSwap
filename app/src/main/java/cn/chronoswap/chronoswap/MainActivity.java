@@ -1,5 +1,6 @@
 package cn.chronoswap.chronoswap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -104,5 +105,11 @@ public class MainActivity extends AppCompatActivity {
         bottomText[currentTabIndex].setTextColor(getResources().getColor(R.color.white));
         bottomText[index].setTextColor(getResources().getColor(R.color.selected));
         currentTabIndex = index;
+    }
+
+    //个人页面的登录按钮跳转
+    public void onLoginButtonClicked(View v){
+        Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }

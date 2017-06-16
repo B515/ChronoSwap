@@ -8,4 +8,6 @@
     <string name="setting">设置</string>
     <string name="log_in">登录</string>
     <string name="log_out">退出登录</string>
+    <string name="username">用户名：</string>
+    <string name="password">密码：</string>
 </resources>
