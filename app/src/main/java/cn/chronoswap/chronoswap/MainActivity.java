@@ -1,5 +1,6 @@
 package cn.chronoswap.chronoswap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -86,5 +87,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    //个人页面的登录按钮跳转
+    public void onLoginButtonClicked(View v){
+        Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 }
