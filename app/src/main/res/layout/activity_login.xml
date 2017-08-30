@@ -4,61 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
     android:orientation="vertical"
     tools:context="cn.chronoswap.chronoswap.LoginActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:background="@color/colorPrimaryDark">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:gravity="center"
-            android:text="@string/username" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
 
-        <EditText
-            android:id="@+id/login_etUsername"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        tools:context="cn.chronoswap.chronoswap.LoginActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/login_etUsername"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/login_etPassword"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/log_in"
+            android:text="@string/log_in" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:gravity="center"
-            android:text="@string/password" />
-
-        <EditText
-            android:id="@+id/login_etPassword"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.6" />
+            android:id="@+id/login_tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/error" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/login_btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/log_in"
-        android:text="@string/log_in" />
-
-    <TextView
-        android:id="@+id/login_tvError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/error"/>
-
 </LinearLayout>

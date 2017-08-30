@@ -119,8 +119,8 @@
             android:id="@+id/profile_btn_lgn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/log_in"
+            android:background="@color/log_out"
             android:onClick="onLoginButtonClicked"
-            android:text="@string/log_in" />
+            android:text="@string/log_out" />
     </RelativeLayout>
 </LinearLayout>
