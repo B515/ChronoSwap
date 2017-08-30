@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 .show(taskFragment)
                 .commit();
 
-        navigationView= ButterKnife.findById(this, R.id.navigation_view);
+        navigationView = ButterKnife.findById(this, R.id.navigation_view);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -90,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //个人页面的登录按钮跳转
-    public void onLoginButtonClicked(View v){
-        Intent intent=new Intent(MainActivity.this, LoginActivity.class);
+    //个人页面的注销按钮跳转
+    public void onLoginButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }

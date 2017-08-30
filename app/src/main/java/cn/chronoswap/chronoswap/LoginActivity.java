@@ -1,5 +1,6 @@
 package cn.chronoswap.chronoswap;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -24,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;
     private TextView tvError;
     private Button btnLogin;
-    private String test;
     private Handler mHandler;
 
     @Override
@@ -42,7 +42,8 @@ public class LoginActivity extends AppCompatActivity {
                 if (msg.what == 2) {
                     tvError.setTextColor(getResources().getColor(R.color.right));
                     tvError.setText((String) msg.obj);
-                    finish();
+                    Intent intent = new Intent(LoginActivity.this,MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 } else tvError.setText((String) msg.obj);
             }
         };
@@ -97,52 +98,4 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 }
-/*
-    public void Login(View v) {
-        String username = etUsername.getText().toString();
-        String password = etPassword.getText().toString();
-        String path = "http://www.chronoswap.cn/userlogin.php";
-        try {
-            URL url = new URL(path);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setConnectTimeout(5000);
-            connection.setRequestMethod("POST");
 
-            //数据准备
-            String data = "name=" + username + "&password=" + password;
-            //至少要设置的两个请求头
-            connection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
-            connection.setRequestProperty("Content-Length", data.length()+"");
-
-            //post的方式提交实际上是留的方式提交给服务器
-            connection.setDoOutput(true);
-            OutputStream outputStream = connection.getOutputStream();
-            outputStream.write(data.getBytes());
-
-            //获得结果码
-            int responseCode = connection.getResponseCode();
-            if (responseCode == 0) {
-                //未找到用户
-                tvError.setText("未找到用户");
-            } else if (responseCode == 1) {
-                //登陆成功
-                tvError.setTextColor(getResources().getColor(R.color.right));
-                tvError.setText("登录成功");
-                return;
-            } else if (responseCode == 2) {
-                //密码错误
-                tvError.setText("密码错误");
-            } else {
-                //登陆失败
-                tvError.setText("登录失败");
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (ProtocolException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return;
-    }
-}*/
