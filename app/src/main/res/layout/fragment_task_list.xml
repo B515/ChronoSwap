@@ -9,5 +9,5 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="cn.chronoswap.chronoswap.TaskFragment"
+    tools:context="cn.chronoswap.chronoswap.UI.TaskFragment"
     tools:listitem="@layout/fragment_task" />

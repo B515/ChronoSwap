@@ -10,4 +10,11 @@
     <string name="log_out">注销</string>
     <string name="username">用户名：</string>
     <string name="password">密码：</string>
+    <string name="info">个人信息</string>
+    <string name="avatar">头像</string>
+    <string name="id">ID</string>
+    <string name="nickname">昵称</string>
+    <string name="gender">性别</string>
+    <string name="birthday">生日</string>
+    <string name="default_info">——</string>
 </resources>
