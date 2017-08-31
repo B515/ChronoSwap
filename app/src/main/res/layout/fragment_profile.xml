@@ -4,54 +4,56 @@
     android:layout_height="match_parent"
     android:background="#ebebeb"
     android:orientation="vertical"
-    tools:context="cn.chronoswap.chronoswap.ProfileFragment">
+    tools:context="cn.chronoswap.chronoswap.UI.ProfileFragment">
+
     <RelativeLayout
         android:id="@+id/profile_re_myinfo"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginBottom="18dp"
+        android:background="@drawable/color_selector_re"
         android:clickable="true"
+        android:onClick="onInfoButtonClicked"
         android:paddingBottom="8dp"
-        android:paddingTop="8dp"
-        android:background="@color/white">
+        android:paddingTop="8dp">
 
-    <ImageView
-        android:id="@+id/profile_iv_avatar"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="15dp"
-        android:src="@color/colorPrimaryDark"/>
+        <ImageView
+            android:id="@+id/profile_iv_avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="15dp"
+            android:src="@color/colorPrimaryDark" />
 
-    <LinearLayout
-        android:id="@+id/profile_ll_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_toEndOf="@id/profile_iv_avatar"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/profile_tv_name"
+        <LinearLayout
+            android:id="@+id/profile_ll_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Admin"
-            android:textColor="#353535"
-            android:textSize="16sp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/profile_iv_avatar"
+            android:orientation="horizontal">
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/profile_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#353535"
+                android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/profile_tv_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@id/profile_iv_avatar"
-        android:text="id:"
-        android:textColor="#AAAAAA"
-        android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/profile_tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/profile_iv_avatar"
+            android:text="id:"
+            android:textColor="#AAAAAA"
+            android:textSize="14sp" />
 
     </RelativeLayout>
 
@@ -59,10 +61,11 @@
         android:id="@+id/profile_re_task_history"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/white"
+        android:background="@drawable/color_selector_re"
         android:clickable="true"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp">
+        android:onClick="onHistoryButtonClicked"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -85,10 +88,11 @@
         android:id="@+id/profile_re_setting"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/white"
+        android:background="@drawable/color_selector_re"
         android:clickable="true"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp">
+        android:onClick="onSettingButtonClicked"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/log_out"
-            android:onClick="onLoginButtonClicked"
+            android:onClick="onLogoutButtonClicked"
             android:text="@string/log_out" />
     </RelativeLayout>
 </LinearLayout>

@@ -1,4 +1,4 @@
-package cn.chronoswap.chronoswap;
+package cn.chronoswap.chronoswap.UI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import butterknife.ButterKnife;
+import cn.chronoswap.chronoswap.R;
 
 public class MainActivity extends AppCompatActivity {
     private Fragment[] fragments;
@@ -90,8 +91,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //个人页面的个人资料跳转
+    public void onInfoButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, InfoActivity.class);
+        startActivity(intent);
+    }
+
+    //个人页面的任务历史按钮跳转
+    public void onHistoryButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+        startActivity(intent);
+    }
+
+    //个人页面的设置按钮跳转
+    public void onSettingButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+        startActivity(intent);
+    }
+
     //个人页面的注销按钮跳转
-    public void onLoginButtonClicked(View v) {
+    public void onLogoutButtonClicked(View v) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

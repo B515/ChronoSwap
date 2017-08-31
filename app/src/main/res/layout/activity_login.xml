@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="cn.chronoswap.chronoswap.LoginActivity">
+    tools:context="cn.chronoswap.chronoswap.UI.LoginActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
 
@@ -29,11 +29,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:orientation="vertical"
-        tools:context="cn.chronoswap.chronoswap.LoginActivity">
+        tools:context="cn.chronoswap.chronoswap.UI.LoginActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <TextView
