@@ -24,7 +24,9 @@
         </activity>
         <activity android:name=".UI.InfoActivity" />
         <activity android:name=".UI.HistoryActivity" />
-        <activity android:name=".UI.SettingActivity"></activity>
+        <activity android:name=".UI.SettingActivity" />
+        <activity android:name=".UI.TaskCreateActivity" />
+        <activity android:name=".UI.BalanceActivity"></activity>
     </application>
 
 </manifest>

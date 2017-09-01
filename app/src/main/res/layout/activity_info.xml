@@ -34,29 +34,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/view2"
+            android:layout_centerVertical="true"
             android:text="@string/avatar"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignStart="@+id/view2" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/info_iv_avatar"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_marginEnd="9dp"
-            android:src="@color/colorPrimaryDark"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginEnd="9dp"
+            android:src="@color/colorPrimaryDark" />
 
         <View
+            android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="0.1dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="12dp"
-            android:background="#dadada"
-            android:id="@+id/view2" />
+            android:background="#dadada" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -66,25 +67,25 @@
         android:paddingStart="12dp">
 
         <TextView
+            android:id="@+id/info_tv_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="@string/id"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_5" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/info_tv_ID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_info"
-            android:textColor="@color/text"
-            android:textSize="16sp"
             android:layout_alignBaseline="@+id/info_tv_5"
             android:layout_alignBottom="@+id/info_tv_5"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"
@@ -93,35 +94,36 @@
             android:layout_marginStart="12dp"
             android:background="#dadada" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/color_selector_re"
         android:clickable="true"
+        android:onClick="onNameButtonClicked"
         android:paddingEnd="12dp"
-        android:paddingStart="12dp"
-        android:onClick="onNameButtonClicked">
+        android:paddingStart="12dp">
 
         <TextView
+            android:id="@+id/info_tv_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="@string/nickname"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_2" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/info_tv_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_info"
-            android:textColor="@color/text"
-            android:textSize="16sp"
             android:layout_alignBaseline="@+id/info_tv_2"
             android:layout_alignBottom="@+id/info_tv_2"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"
@@ -130,34 +132,110 @@
             android:layout_marginStart="12dp"
             android:background="#dadada" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/color_selector_re"
         android:clickable="true"
+        android:onClick="onGenderButtonClicked"
         android:paddingEnd="12dp"
-        android:paddingStart="12dp"
-        android:onClick="onGenderButtonClicked">
+        android:paddingStart="12dp">
 
         <TextView
+            android:id="@+id/info_tv_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="@string/gender"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_3" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/info_tv_gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/info_tv_3"
+            android:layout_alignBottom="@+id/info_tv_3"
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:background="#dadada" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/color_selector_re"
+        android:clickable="true"
+        android:onClick="onDateButtonClicked"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp">
+
+        <TextView
+            android:id="@+id/info_tv_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/birthday"
+            android:textColor="#353535"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/info_tv_birth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/info_tv_4"
+            android:layout_alignBottom="@+id/info_tv_4"
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:background="#dadada" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/color_selector_re"
+        android:clickable="true"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:onClick="onUniButtonClicked">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/university"
+            android:textColor="#353535"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/info_tv_6" />
+
+        <TextView
+            android:id="@+id/info_tv_uni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/default_info"
             android:textColor="@color/text"
             android:textSize="16sp"
-            android:layout_alignBaseline="@+id/info_tv_3"
-            android:layout_alignBottom="@+id/info_tv_3"
+            android:layout_alignBaseline="@+id/info_tv_6"
+            android:layout_alignBottom="@+id/info_tv_6"
             android:layout_alignParentEnd="true" />
 
         <View
@@ -174,27 +252,64 @@
         android:clickable="true"
         android:paddingEnd="12dp"
         android:paddingStart="12dp"
-        android:onClick="onDateButtonClicked">
+        android:onClick="onSIDButtonClicked">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/birthday"
+            android:text="@string/stu_id"
             android:textColor="#353535"
             android:textSize="16sp"
             android:layout_centerVertical="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_4" />
+            android:id="@+id/info_tv_7" />
 
         <TextView
-            android:id="@+id/info_tv_birth"
+            android:id="@+id/info_tv_stu_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/default_info"
             android:textColor="@color/text"
             android:textSize="16sp"
-            android:layout_alignBaseline="@+id/info_tv_4"
-            android:layout_alignBottom="@+id/info_tv_4"
+            android:layout_alignBaseline="@+id/info_tv_7"
+            android:layout_alignBottom="@+id/info_tv_7"
+            android:layout_alignParentEnd="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:background="#dadada" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/color_selector_re"
+        android:clickable="true"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:onClick="onPhoneButtonClicked">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phong_num"
+            android:textColor="#353535"
+            android:textSize="16sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/info_tv_8" />
+
+        <TextView
+            android:id="@+id/info_tv_phong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp"
+            android:layout_alignBaseline="@+id/info_tv_8"
+            android:layout_alignBottom="@+id/info_tv_8"
             android:layout_alignParentEnd="true" />
 
         <View
