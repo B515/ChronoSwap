@@ -10,7 +10,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
 import android.text.InputType;
 import android.view.View;
 import android.widget.DatePicker;
@@ -47,68 +46,24 @@ public class InfoActivity extends AppCompatActivity {
         tvUni = (TextView) findViewById(R.id.info_tv_uni);
         tvSID = (TextView) findViewById(R.id.info_tv_stu_id);
         tvPhong = (TextView) findViewById(R.id.info_tv_phong);
-        getInfo();
-        mHandler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.what == 1) {
-                    String[] userInfo = msg.obj.toString().split("&");
-                    tvID.setText(userInfo[0]);
-                    tvNickname.setText(userInfo[6]);
-                    tvGender.setText(userInfo[1]);
-                    tvBirthday.setText(userInfo[2]);
-                    tvUni.setText(userInfo[3]);
-                    tvSID.setText(userInfo[4]);
-                    tvPhong.setText(userInfo[5]);
-                }
-            }
-        };
+        InfoIni();
     }
 
-    //从网络获取用户个人信息
-    private void getInfo() {
-        String id = UserInfoManager.getID(InfoActivity.this);
-        TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        String imei = TelephonyMgr.getDeviceId();
-        String path = "http://www.chronoswap.cn/userinfo_get.php";
-        //创建okHttpClient对象
-        OkHttpClient ohc = new OkHttpClient();
-        //表单数据
-        RequestBody fb = new FormBody.Builder()
-                .add("userid", id)
-                .add("session", imei)
-                .build();
-        //创建一个Request
-        Request req = new Request.Builder()
-                .url(path)
-                .post(fb)
-                .build();
-        Call call = ohc.newCall(req);
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String text = response.body().string();
-                Message msg = new Message();
-                if (text == null) {
-                    msg.what = 0;
-                } else {
-                    msg.what = 1;
-                    msg.obj = text;
-                }
-                mHandler.sendMessage(msg);
-            }
-        });
+    //获取用户个人信息
+    private void InfoIni() {
+        tvID.setText(UserInfoManager.getID(InfoActivity.this));
+        tvNickname.setText(UserInfoManager.getNickname(InfoActivity.this));
+        tvGender.setText(UserInfoManager.getGender(InfoActivity.this));
+        tvBirthday.setText(UserInfoManager.getBirthday(InfoActivity.this));
+        tvUni.setText(UserInfoManager.getUniversity(InfoActivity.this));
+        tvSID.setText(UserInfoManager.getStudentID(InfoActivity.this));
+        tvPhong.setText(UserInfoManager.getPhoneNumber(InfoActivity.this));
     }
 
     //更改用户个人信息
     private void setInfo(int what, String obj) {
         String id = UserInfoManager.getID(InfoActivity.this);
-        TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        String imei = TelephonyMgr.getDeviceId();
+        String session = UserInfoManager.getSession(InfoActivity.this);
         String path = "";
         String name = "";
         switch (what) {
@@ -143,7 +98,7 @@ public class InfoActivity extends AppCompatActivity {
         RequestBody fb = new FormBody.Builder()
                 .add("userid", id)
                 .add(name, obj)
-                .add("session", imei)
+                .add("session", session)
                 .build();
         //创建一个Request
         Request req = new Request.Builder()
@@ -182,12 +137,14 @@ public class InfoActivity extends AppCompatActivity {
                             public void handleMessage(Message msg) {
                                 if (msg.obj.toString().charAt(0) == '1') {
                                     tvGender.setText(str);
+                                    UserInfoManager.setGender(InfoActivity.this, str);
                                     Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                                }else if (msg.obj.toString().charAt(0) == '0'){
+                                } else if (msg.obj.toString().charAt(0) == '0') {
                                     Toast.makeText(InfoActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(InfoActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }else Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
                             }
                         };
                         dialog.dismiss();
@@ -213,12 +170,14 @@ public class InfoActivity extends AppCompatActivity {
                             public void handleMessage(Message msg) {
                                 if (msg.obj.toString().charAt(0) == '1') {
                                     tvNickname.setText(str);
+                                    UserInfoManager.setNickname(InfoActivity.this, str);
                                     Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                                }else if (msg.obj.toString().charAt(0) == '0'){
+                                } else if (msg.obj.toString().charAt(0) == '0') {
                                     Toast.makeText(InfoActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(InfoActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }else Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
                             }
                         };
                     }
@@ -240,12 +199,14 @@ public class InfoActivity extends AppCompatActivity {
                             public void handleMessage(Message msg) {
                                 if (msg.obj.toString().charAt(0) == '1') {
                                     tvBirthday.setText(str);
+                                    UserInfoManager.setBirthday(InfoActivity.this, str);
                                     Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                                }else if (msg.obj.toString().charAt(0) == '0'){
+                                } else if (msg.obj.toString().charAt(0) == '0') {
                                     Toast.makeText(InfoActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(InfoActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }else Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
                             }
                         };
                     }
@@ -272,12 +233,14 @@ public class InfoActivity extends AppCompatActivity {
                             public void handleMessage(Message msg) {
                                 if (msg.obj.toString().charAt(0) == '1') {
                                     tvUni.setText(str);
+                                    UserInfoManager.setUniversity(InfoActivity.this, str);
                                     Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                                }else if (msg.obj.toString().charAt(0) == '0'){
+                                } else if (msg.obj.toString().charAt(0) == '0') {
                                     Toast.makeText(InfoActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(InfoActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }else Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
                             }
                         };
                     }
@@ -302,12 +265,14 @@ public class InfoActivity extends AppCompatActivity {
                             public void handleMessage(Message msg) {
                                 if (msg.obj.toString().charAt(0) == '1') {
                                     tvSID.setText(str);
+                                    UserInfoManager.setStudentID(InfoActivity.this, str);
                                     Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                                }else if (msg.obj.toString().charAt(0) == '0'){
+                                } else if (msg.obj.toString().charAt(0) == '0') {
                                     Toast.makeText(InfoActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(InfoActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }else Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
                             }
                         };
                     }
@@ -332,12 +297,14 @@ public class InfoActivity extends AppCompatActivity {
                             public void handleMessage(Message msg) {
                                 if (msg.obj.toString().charAt(0) == '1') {
                                     tvPhong.setText(str);
+                                    UserInfoManager.setPhoneNumber(InfoActivity.this, str);
                                     Toast.makeText(InfoActivity.this, "修改成功", Toast.LENGTH_SHORT).show();
-                                }else if (msg.obj.toString().charAt(0) == '0'){
+                                } else if (msg.obj.toString().charAt(0) == '0') {
                                     Toast.makeText(InfoActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(InfoActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
-                                }else Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                                } else
+                                    Toast.makeText(InfoActivity.this, msg.obj.toString(), Toast.LENGTH_SHORT).show();
                             }
                         };
                     }

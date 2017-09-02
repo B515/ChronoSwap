@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#ebebeb"
+    android:orientation="vertical"
     tools:context="cn.chronoswap.chronoswap.UI.BalanceActivity">
 
     <android.support.v7.widget.Toolbar
@@ -31,6 +31,7 @@
         android:foreground="?attr/selectableItemBackground"
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="4dp">
+
         <TextView
             android:id="@+id/balance_tv_tp"
             android:layout_width="match_parent"
@@ -48,7 +49,6 @@
             android:text="信用积分:0.00"
             android:textColor="@color/white"
             android:textSize="15sp" />
-
 
 
     </android.support.v7.widget.CardView>

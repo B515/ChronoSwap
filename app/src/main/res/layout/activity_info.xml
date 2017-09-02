@@ -208,35 +208,36 @@
             android:layout_marginStart="12dp"
             android:background="#dadada" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/color_selector_re"
         android:clickable="true"
+        android:onClick="onUniButtonClicked"
         android:paddingEnd="12dp"
-        android:paddingStart="12dp"
-        android:onClick="onUniButtonClicked">
+        android:paddingStart="12dp">
 
         <TextView
+            android:id="@+id/info_tv_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="@string/university"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_6" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/info_tv_uni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_info"
-            android:textColor="@color/text"
-            android:textSize="16sp"
             android:layout_alignBaseline="@+id/info_tv_6"
             android:layout_alignBottom="@+id/info_tv_6"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"
@@ -245,35 +246,36 @@
             android:layout_marginStart="12dp"
             android:background="#dadada" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/color_selector_re"
         android:clickable="true"
+        android:onClick="onSIDButtonClicked"
         android:paddingEnd="12dp"
-        android:paddingStart="12dp"
-        android:onClick="onSIDButtonClicked">
+        android:paddingStart="12dp">
 
         <TextView
+            android:id="@+id/info_tv_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="@string/stu_id"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_7" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/info_tv_stu_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_info"
-            android:textColor="@color/text"
-            android:textSize="16sp"
             android:layout_alignBaseline="@+id/info_tv_7"
             android:layout_alignBottom="@+id/info_tv_7"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"
@@ -282,35 +284,36 @@
             android:layout_marginStart="12dp"
             android:background="#dadada" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@drawable/color_selector_re"
         android:clickable="true"
+        android:onClick="onPhoneButtonClicked"
         android:paddingEnd="12dp"
-        android:paddingStart="12dp"
-        android:onClick="onPhoneButtonClicked">
+        android:paddingStart="12dp">
 
         <TextView
+            android:id="@+id/info_tv_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
             android:text="@string/phong_num"
             android:textColor="#353535"
-            android:textSize="16sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"
-            android:id="@+id/info_tv_8" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/info_tv_phong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/default_info"
-            android:textColor="@color/text"
-            android:textSize="16sp"
             android:layout_alignBaseline="@+id/info_tv_8"
             android:layout_alignBottom="@+id/info_tv_8"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:text="@string/default_info"
+            android:textColor="@color/text"
+            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"

@@ -34,7 +34,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/profile_tv_name"
+                android:id="@+id/profile_tv_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -56,6 +56,7 @@
             android:textSize="14sp" />
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/profile_re_balance"
         android:layout_width="match_parent"

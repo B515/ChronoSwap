@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -61,6 +60,8 @@ public class TaskCreateActivity extends AppCompatActivity {
                     Toast.makeText(TaskCreateActivity.this, "会话过期，请重新登录", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(TaskCreateActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                } else if (msg.obj.toString().charAt(0) == '2') {
+                    Toast.makeText(TaskCreateActivity.this, "TP点不足，无法发布", Toast.LENGTH_SHORT).show();
                 } else tvError.setText(msg.obj.toString());
             }
         };
@@ -81,7 +82,7 @@ public class TaskCreateActivity extends AppCompatActivity {
         finish();
     }
 
-    //登录操作
+    //发布任务操作
     protected void publish() {
         String userid = UserInfoManager.getID(TaskCreateActivity.this);
         String title = etTitle.getText().toString();
@@ -89,9 +90,7 @@ public class TaskCreateActivity extends AppCompatActivity {
         String place = etPlace.getText().toString();
         String reward = etReward.getText().toString();
         String details = etDetails.getText().toString();
-        TelephonyManager TelephonyMgr = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        String session = TelephonyMgr.getDeviceId();
-
+        String session = UserInfoManager.getSession(TaskCreateActivity.this);
         String path = "http://www.chronoswap.cn/mission_set.php";
         //创建okHttpClient对象
         OkHttpClient ohc = new OkHttpClient();
