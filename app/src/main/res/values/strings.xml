@@ -28,4 +28,8 @@
     <string name="reward">奖励</string>
     <string name="details">备注</string>
     <string name="cancel">取消</string>
+    <string name="accept">接受</string>
+    <string name="time">时间：</string>
+    <string name="placex">地点：</string>
+    <string name="payment">报酬：</string>
 </resources>
