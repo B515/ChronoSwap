@@ -7,19 +7,6 @@
     android:orientation="vertical"
     tools:context="cn.chronoswap.chronoswap.UI.LoginActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/issued_tb_create"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </android.support.v7.widget.Toolbar>
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
