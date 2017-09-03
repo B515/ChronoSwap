@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         initView();
     }
 
+    //初始化Fragment
     private void initView() {
 
         taskFragment = new TaskFragment();
@@ -97,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //个人页面的账户余额跳转
+    public void onBalanceButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, BalanceActivity.class);
+        startActivity(intent);
+    }
+
     //个人页面的任务历史按钮跳转
     public void onHistoryButtonClicked(View v) {
         Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
@@ -112,6 +119,12 @@ public class MainActivity extends AppCompatActivity {
     //个人页面的注销按钮跳转
     public void onLogoutButtonClicked(View v) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    //发布任务按钮跳转
+    public void onCreateButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, TaskCreateActivity.class);
         startActivity(intent);
     }
 }

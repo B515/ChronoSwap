@@ -4,6 +4,7 @@
     <string name="accepted">接受的任务</string>
     <string name="issued">发出的任务</string>
     <string name="profile">个人</string>
+    <string name="balance">账户余额</string>
     <string name="task_history">任务历史</string>
     <string name="setting">设置</string>
     <string name="log_in">登录</string>
@@ -16,5 +17,19 @@
     <string name="nickname">昵称</string>
     <string name="gender">性别</string>
     <string name="birthday">生日</string>
+    <string name="university">大学</string>
+    <string name="stu_id">学号</string>
+    <string name="phong_num">手机</string>
     <string name="default_info">——</string>
+    <string name="publish">发布任务</string>
+    <string name="title">任务标题</string>
+    <string name="place">地点</string>
+    <string name="deadline">截止时间</string>
+    <string name="reward">奖励</string>
+    <string name="details">备注</string>
+    <string name="cancel">取消</string>
+    <string name="accept">接受</string>
+    <string name="time">时间：</string>
+    <string name="placex">地点：</string>
+    <string name="payment">报酬：</string>
 </resources>

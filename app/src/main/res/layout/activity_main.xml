@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -18,14 +17,15 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textColor="@color/white"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
     </android.support.v7.widget.Toolbar>
 
     <!--界面中间的显示区域-->
     <RelativeLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_view"
@@ -35,7 +35,7 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/color_selector"
         app:itemTextColor="@drawable/color_selector"
-        app:menu="@menu/menu_main"/>
+        app:menu="@menu/menu_main" />
 </RelativeLayout>
 
 
