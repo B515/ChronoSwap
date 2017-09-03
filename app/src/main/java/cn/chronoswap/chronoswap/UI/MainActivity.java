@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -14,82 +14,72 @@ import butterknife.ButterKnife;
 import cn.chronoswap.chronoswap.R;
 
 public class MainActivity extends AppCompatActivity {
-    private Fragment[] fragments;
-    public TaskFragment taskFragment;
-    private AcceptedFragment acceptedFragment;
-    private IssuedFragment issuedFragment;
-    private ProfileFragment profileFragment;
+    private ViewPager viewPager;
+    private MenuItem menuItem;
     private BottomNavigationView navigationView;
-
-    private int index;
-    // 当前fragment的index
-    private int currentTabIndex;
-
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        toolbar = ButterKnife.findById(this, R.id.toolbar);
+        setSupportActionBar(toolbar);
         initView();
     }
 
     //初始化Fragment
     private void initView() {
+        viewPager = ButterKnife.findById(this, R.id.viewPager);
+        viewPager.setAdapter(new FragmentsAdapter(getSupportFragmentManager()));
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        taskFragment = new TaskFragment();
-        acceptedFragment = new AcceptedFragment();
-        issuedFragment = new IssuedFragment();
-        profileFragment = new ProfileFragment();
+            }
 
-        fragments = new Fragment[]{taskFragment, acceptedFragment, issuedFragment, profileFragment};
+            @Override
+            public void onPageSelected(int position) {
+                if (menuItem == null) {
+                    navigationView.getMenu().getItem(0).setChecked(false);
+                } else
+                    menuItem.setChecked(false);
+                menuItem = navigationView.getMenu().getItem(position);
+                menuItem.setChecked(true);
+            }
 
-        // 添加显示第一个fragment
-        getSupportFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, taskFragment)
-                .add(R.id.fragment_container, acceptedFragment)
-                .add(R.id.fragment_container, issuedFragment)
-                .add(R.id.fragment_container, profileFragment)
-                .hide(acceptedFragment)
-                .hide(issuedFragment)
-                .hide(profileFragment)
-                .show(taskFragment)
-                .commit();
+            @Override
+            public void onPageScrollStateChanged(int state) {
 
-        navigationView = ButterKnife.findById(this, R.id.navigation_view);
+            }
+        });
+
+        navigationView = ButterKnife.findById(this, R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.main_task:
-                        index = 0;
+                        viewPager.setCurrentItem(0);
                         break;
 
                     case R.id.main_accepted:
-                        index = 1;
+                        viewPager.setCurrentItem(1);
                         break;
 
                     case R.id.main_issued:
-                        index = 2;
+                        viewPager.setCurrentItem(2);
                         break;
 
                     case R.id.main_profile:
-                        index = 3;
+                        viewPager.setCurrentItem(3);
                         break;
                 }
-
-                if (currentTabIndex != index) {
-                    FragmentTransaction trx = getSupportFragmentManager()
-                            .beginTransaction();
-                    trx.hide(fragments[currentTabIndex]);
-                    if (!fragments[index].isAdded()) {
-                        trx.add(R.id.fragment_container, fragments[index]);
-                    }
-                    trx.show(fragments[index]).commit();
-                }
-                currentTabIndex = index;
                 return true;
             }
         });
+        BottomNavigationViewHelper.disableShiftMode(navigationView);
     }
 
     //个人页面的个人资料跳转
