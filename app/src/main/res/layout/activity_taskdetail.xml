@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.chronoswap.chronoswap.UI.TaskdetailActivity">
+    //android:background="@color/selected_re"
+
+
+    <Button
+        android:id="@+id/taskdetail_accepted"
+        android:layout_width="296dp"
+        android:layout_height="90dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/accept"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+    <TextView
+        android:id="@+id/taskdetail_title"
+        android:layout_width="312dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="32dp"
+        android:text="title"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/taskdetail_time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
+        tools:text="取快递" />
+
+
+
+    <TextView
+        android:id="@+id/taskdetail_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"
+        tools:text="@string/time"
+        app:layout_constraintBaseline_toBaselineOf="@+id/taskdetail_togettime"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="@+id/taskdetail_title" />
+
+    <TextView
+        android:id="@+id/taskdetail_togettime"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="107dp"
+        android:text="toget_time"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/taskdetail_togetpayment"
+        app:layout_constraintRight_toRightOf="@+id/taskdetail_togetpayment"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+
+
+    <TextView
+        android:id="@+id/taskdetail_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="payment"
+        tools:text="@string/payment"
+        android:layout_marginStart="33dp"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="68dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/taskdetail_togetpayment" />
+
+    <TextView
+        android:id="@+id/taskdetail_togetpayment"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:layout_marginBottom="54dp"
+        android:layout_marginTop="61dp"
+        android:text="toget_payment"
+        app:layout_constraintBottom_toBottomOf="@+id/taskdetail_togetplace"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/taskdetail_togetplace"
+        app:layout_constraintRight_toRightOf="@+id/taskdetail_togetplace"
+        app:layout_constraintTop_toTopOf="@+id/taskdetail_togettime"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <TextView
+        android:id="@+id/taskdetail_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="33dp"
+        android:text="place"
+        app:layout_constraintBaseline_toBaselineOf="@+id/taskdetail_togetplace"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_constraintBaseline_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:text="@string/placex" />
+
+    <TextView
+        android:id="@+id/taskdetail_togetplace"
+        android:layout_width="146dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="221dp"
+        android:text="toget_place"
+        app:layout_constraintLeft_toRightOf="@+id/taskdetail_place"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
+</android.support.constraint.ConstraintLayout>
