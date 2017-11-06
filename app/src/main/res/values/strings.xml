@@ -9,8 +9,10 @@
     <string name="setting">设置</string>
     <string name="log_in">登录</string>
     <string name="log_out">注销</string>
-    <string name="username">用户名：</string>
-    <string name="password">密码：</string>
+    <string name="sign_up">注册账户</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="repassword">重复密码</string>
     <string name="info">个人信息</string>
     <string name="avatar">头像</string>
     <string name="id">ID</string>
@@ -32,4 +34,5 @@
     <string name="time">时间：</string>
     <string name="placex">地点：</string>
     <string name="payment">报酬：</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
 </resources>
