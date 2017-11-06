@@ -6,23 +6,20 @@ android:
   components:
   - tools
   - tools
-  - build-tools-25.0.2
-  - android-25
+  - build-tools-27.0.0
+  - android-27
 
 before_install:
   - chmod +x gradlew
-  - mkdir "$ANDROID_HOME/licenses" || true
-  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > "$ANDROID_HOME/licenses/android-sdk-license"
-  - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
 
 script:
-  - "./gradlew assembleDebug"
+  - "./gradlew assembleRelease"
 
 deploy:
   provider: releases
   api_key:
     secure: V3Qvax6+f9LiZ+OBOu6ZutSvR1cBdykN/fRJBTp99F+O9rVeM9F0Ei/L5WhtHmol0XlCw7qtry5odyLjR8F8S3i48SNNAxxmN4XdJdimGF1p2KAtZR7pebpKYITYoQzj/tbkEgvdjXDbcm78k1FjB7nW1SNQQkPPDv3hHvYRU/tdazJ4nA8Z/qybmfWvt38qukwhZLfORGCwsayloy2Uq+EV0Tn1kzbgxoGdEu8JgjfoAnzc25ZOBvsSUmxS7P7CWmMy8SJpeZQ71qHL0ITP8RlbMPATBwyWF3Apg2aBue12zZE/DXj09ZcTjvkfaSebnRO4VYHFgBv5xUGmyDXCJnNCo1koSFYkRyasgWzj7TirTqD5zwIN2FjUEa0JfXwVyZ72FGFN+mZH98oakxn0AY4xLOLjcyD9oMBZVJ6CwoWq1vvvLupSeD5P0Wvz1ww0gW5Nd2yqeMWo2rfmwHSouq9HGByEUaiqRji6EWbmL6f60Oy0P6krMlglXIdOS7ovtWuAEnabX2CGK00Gj7gDugEuBzy5vKbHBs5gvBiAGZ5kWYU/Q/f0OR6eAoxMOSY3UuDMlanSIJs9OxN7n13itKIDtxc5mw8laL/mGfdR4AD58vpKc0Ua7mIwJCGAakQ0QyDBwnZ1oxtkaFw1Iunkpw7NSAYu5G8838WS1sQq0DM=
-  file: app/build/outputs/apk/app-debug.apk
+  file: app/build/outputs/apk/release/app-release-unsigned.apk
   overwrite: true
   skip_cleanup: true
   on:
