@@ -30,7 +30,11 @@
         android:layout_marginRight="20dp"
         android:orientation="vertical"
         tools:context="cn.chronoswap.chronoswap.UI.LoginActivity">
-
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,8 +83,18 @@
             android:id="@+id/login_btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:background="@color/log_in"
             android:text="@string/log_in" />
+
+        <TextView
+            android:id="@+id/login_tvSignUp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/colorPrimary"/>
 
         <TextView
             android:id="@+id/login_tvError"

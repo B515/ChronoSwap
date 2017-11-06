@@ -86,7 +86,7 @@ public class TaskCreateActivity extends AppCompatActivity {
     protected void publish() {
         String userid = UserInfoManager.getID(TaskCreateActivity.this);
         String title = etTitle.getText().toString();
-        String deadline = etMonth.getText().toString() + "月" + etDay.getText().toString() + "日" + etHour.getText().toString() + ":" + etMinute.getText().toString();
+        String deadline = etMonth.getText().toString() + "-" + etDay.getText().toString() + " " + etHour.getText().toString() + ":" + etMinute.getText().toString();
         String place = etPlace.getText().toString();
         String reward = etReward.getText().toString();
         String details = etDetails.getText().toString();
