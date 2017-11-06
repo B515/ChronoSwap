@@ -4,7 +4,6 @@ buildscript {
     ext.support_libs_version = '27.0.0'
     repositories {
         jcenter()
-        maven { url 'https://maven.google.com' }
         google()
     }
     dependencies {
@@ -18,7 +17,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven { url 'https://maven.google.com' }
+        google()
         mavenCentral()
     }
 }
