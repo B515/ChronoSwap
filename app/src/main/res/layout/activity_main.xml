@@ -1,174 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cn.chronoswap.chronoswap.MainActivity">
+    tools:context="cn.chronoswap.chronoswap.UI.MainActivity">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-        </android.support.v7.widget.Toolbar>
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/main_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_alignParentBottom="true"
-        android:background="?attr/colorPrimaryDark"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <RelativeLayout
-            android:id="@+id/main_re_task_list"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onTabClicked"
-            android:padding="3dp">
-
-            <ImageView
-                android:id="@+id/main_ib_task"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:background="?attr/colorPrimaryDark"
-                android:focusable="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/tab_task" />
-
-            <TextView
-                android:id="@+id/main_tv_task"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/main_ib_task"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"
-                android:text="@string/task_list"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/main_re_accepted_list"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onTabClicked"
-            android:padding="3dp">
-            <ImageView
-                android:id="@+id/main_ib_accepted"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:background="?attr/colorPrimaryDark"
-                android:focusable="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/tab_accepted" />
-
-            <TextView
-                android:id="@+id/main_tv_accepted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/main_ib_accepted"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"
-                android:text="@string/accepted"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/main_re_issued_list"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onTabClicked"
-            android:padding="3dp">
-
-
-            <ImageView
-                android:id="@+id/main_ib_issued"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:background="?attr/colorPrimaryDark"
-                android:focusable="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/tab_issued" />
-            <TextView
-                android:id="@+id/main_tv_issued"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/main_ib_issued"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"
-                android:text="@string/issued"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/main_re_profile"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onTabClicked"
-            android:padding="3dp">
-            <ImageView
-                android:id="@+id/main_ib_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_centerHorizontal="true"
-                android:background="?attr/colorPrimaryDark"
-                android:focusable="false"
-                android:scaleType="centerInside"
-                android:src="@drawable/tab_profile" />
-
-            <TextView
-                android:id="@+id/main_tv_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/main_ib_profile"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="3dp"
-                android:text="@string/profile"
-                android:textColor="@android:color/white"
-                android:textSize="12sp" />
-        </RelativeLayout>
-    </LinearLayout>
-
-    <!--底部导航栏上的一条细线-->
-    <View
-        android:id="@+id/view_temp"
-        android:layout_width="match_parent"
-        android:layout_height="0.1dp"
-        android:layout_above="@id/main_bottom"
-        android:background="#d6d6d6" />
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+    </android.support.v7.widget.Toolbar>
 
     <!--界面中间的显示区域-->
     <RelativeLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/view_temp" />
+        android:layout_height="match_parent"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@drawable/color_selector"
+        app:itemTextColor="@drawable/color_selector"
+        app:menu="@menu/menu_main"/>
 </RelativeLayout>
 
 
