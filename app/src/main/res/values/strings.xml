@@ -34,5 +34,4 @@
     <string name="time">时间：</string>
     <string name="placex">地点：</string>
     <string name="payment">报酬：</string>
-    <string name="title_activity_sign_up">SignUpActivity</string>
 </resources>
