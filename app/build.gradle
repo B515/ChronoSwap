@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    useLibrary 'org.apache.http.legacy'
     compileSdkVersion 27
     buildToolsVersion "27.0.0"
     defaultConfig {
@@ -11,10 +10,20 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        github {
+            storeFile file("../cs.jks")
+            storePassword System.getenv("STORE_PASSWORD")
+            keyAlias System.getenv("KEY_ALIAS")
+            keyPassword System.getenv("KEY_PASSWORD")
+        }
+    }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.github
         }
     }
 }
@@ -31,6 +40,5 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.squareup.okio:okio:1.13.0'
     implementation 'com.jakewharton:butterknife:8.8.1'
-    testImplementation 'junit:junit:4.12'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
