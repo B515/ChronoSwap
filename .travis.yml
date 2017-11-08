@@ -11,6 +11,7 @@ android:
 
 before_install:
   - chmod +x gradlew
+  - openssl aes-256-cbc -K $encrypted_085edc5e696f_key -iv $encrypted_085edc5e696f_iv -in cs.jks.enc -out cs.jks -d
 
 script:
   - "./gradlew assembleRelease"
