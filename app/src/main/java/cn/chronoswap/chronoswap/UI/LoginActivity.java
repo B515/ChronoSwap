@@ -29,7 +29,7 @@ import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;
-    private TextView tvError;
+    private TextView tvError, tvSignUp;
     private Button btnLogin;
     private Handler mHandler;
 
@@ -40,8 +40,16 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = (EditText) findViewById(R.id.login_etUsername);
         etPassword = (EditText) findViewById(R.id.login_etPassword);
         tvError = (TextView) findViewById(R.id.login_tvError);
+        tvSignUp = (TextView) findViewById(R.id.login_tvSignUp);
         btnLogin = (Button) findViewById(R.id.login_btnLogin);
         btnLogin.setOnClickListener(listener);
+        tvSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
         mHandler = new Handler(Looper.getMainLooper()) {
             @Override
             public void handleMessage(Message msg) {
