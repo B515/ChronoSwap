@@ -2,8 +2,6 @@ package cn.chronoswap.chronoswap.db;
 
 import android.content.Context;
 
-import org.apache.http.util.EncodingUtils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -25,7 +23,7 @@ public class UserInfoManager {
             FileInputStream inputStream = new FileInputStream(file);
             byte[] buffer = new byte[inputStream.available()];
             inputStream.read(buffer);
-            String[] userInfo = EncodingUtils.getString(buffer, "UTF-8").split("&");
+            String[] userInfo = new String(buffer, "UTF-8").split("&");
             return userInfo;
         } catch (Exception e) {
             return null;
