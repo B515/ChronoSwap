@@ -39,7 +39,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/sign_up_create_et_username"
+                android:id="@+id/sign_up_et_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -58,7 +58,8 @@
             <EditText
                 android:id="@+id/sign_up_et_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"/>
         </LinearLayout>
 
         <LinearLayout
@@ -75,62 +76,63 @@
             <EditText
                 android:id="@+id/sign_up_et_repassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/gender"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/create_et_reward"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="number" />
+                android:inputType="textPassword"/>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/birthday"
-                android:textSize="20sp" />
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/gender"-->
+                <!--android:textSize="20sp" />-->
 
-            <EditText
-                android:id="@+id/create_et_detail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            <!--<EditText-->
+                <!--android:id="@+id/sign_up_et_gender"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:inputType="number" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/birthday"-->
+                <!--android:textSize="20sp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/sign_up_et_birthday"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+        <!--</LinearLayout>-->
 
         <Button
-            android:id="@+id/create_btn_publish"
+            android:id="@+id/sign_up_btn_ok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
             android:textSize="20sp" />
 
         <Button
+            android:id="@+id/sign_up_btn_cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onCancelButtonClicked"
             android:text="@string/cancel"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/create_tv_error"
+            android:id="@+id/sign_up_tv_error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/error" />
