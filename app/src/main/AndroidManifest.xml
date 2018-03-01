@@ -30,6 +30,7 @@
         <activity android:name=".UI.TaskCreateActivity" />
         <activity android:name=".UI.BalanceActivity" />
         <activity android:name=".UI.SignUpActivity"></activity>
+        <activity android:name=".UI.TaskdetailActivity" />
     </application>
 
 </manifest>
