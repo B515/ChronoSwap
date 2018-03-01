@@ -76,10 +76,14 @@ public class TaskFragment extends Fragment {
     private Handler mHandler;
     private void getlstdata(){
         tsklst.clear();
-        lst LL=new lst("1","2",nnn);
-        tsklst.add(LL);
-        lst LLL=new lst(msgmsg,msgmsg,msgmsg);
+//        lst LL=new lst("1","2",nnn);
+//        tsklst.add(LL);
+        lst LLL=new lst("拿快递","东门","3月15日 12:00");
         tsklst.add(LLL);
+        lst LLLL=new lst("买瓶水","小卖部","3月10日 17:00");
+        tsklst.add(LLLL);
+        lst LLLLL=new lst("交报告","知行楼","3月17日 13:30");
+        tsklst.add(LLLLL);
 //        lst L0=new lst(getSplited(msgmsg,0,2),getSplited(msgmsg,0,4),getSplited(msgmsg,0,7));
 //        tsklst.add(L0);
 //            lst L1=new lst(lstDataSplit.getSplited(msgmsg,1,2),lstDataSplit.getSplited(msgmsg,1,4),lstDataSplit.getSplited(msgmsg,1,7));
@@ -190,7 +194,6 @@ public class TaskFragment extends Fragment {
         }
     }
     //从网络获取用户信息
-
     private void getLstFromServer() {
         final String id = UserInfoManager.getID(getActivity());
         final String session = UserInfoManager.getSession(getActivity());
