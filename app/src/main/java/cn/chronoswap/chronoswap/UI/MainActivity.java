@@ -122,6 +122,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, TaskCreateActivity.class);
         startActivity(intent);
     }
+    //提交按钮跳转
+    public void onCommitButtonClicked(View v) {
+        Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+        startActivity(intent);
+    }
 
     //跳转到任务详细页面
 //    public void onTaskDetailClicked(View v) {
